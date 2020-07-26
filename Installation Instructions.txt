@@ -1,0 +1,19 @@
+Movie Data Grid Client Application:
+=====================================
+Project Name: moviedata
+Currently the client application is configured to run on port 4200
+
+Instruction to run client application
+>npm install
+>npm start
+
+
+
+Movie DataGrid REST Api Application:
+======================================
+Project Name: moviedata-api
+Currently the server application is configure to run on port 3200
+
+Instruction to run server applicaiton
+> npm install
+> npm start
