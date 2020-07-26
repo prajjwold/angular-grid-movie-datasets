@@ -1,0 +1,31 @@
+<div class="header">
+    <!--Search Button-->
+    <div class="search">
+        <p class="search-label">Contracts</p>
+        <mat-button-toggle-group class="search-area" class="search-button-group">
+            <input class="search-input" [(ngModel)]="searchText" type="text" matInput placeholder="Search Movies">
+            <button class="search-button" mat-raised-button color="primary" (click)="fireSearchEvent()">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-button-toggle-group>
+    </div>
+
+    <div class="import-export-add-movie">
+        <!--Import Export Button-->
+        <div>
+            <mat-form-field class="import-export" [floatLabel]="'never'" appearance="outline">
+                <mat-label>Import/Export</mat-label>
+                <mat-select>
+                    <mat-option value="0">Import</mat-option>
+                    <mat-option value="1">Export</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+        <!--Add Movie Button-->
+        <button class="add-movie" mat-raised-button color="primary">
+            <mat-icon>playlist_add</mat-icon>Add Movie
+        </button>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.search {
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search-label {
+    font-weight: 600;
+    font-size: larger;
+    padding: 0 10px;
+}
+
+.import-export-add-movie {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+mat-cell {
+    flex: 0 0 40%;
+}
+
+.add-movie {
+    margin: 5px;
+    border-radius: 20px;
+    padding: 0 10px;
+}
+
+.import-export {
+    width: 150px;
+    margin-top: 20px;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.search .mat-raised-button {
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.search-button-group {
+    display: flex;
+    width: 300px;
+    border-radius: 20px;
+}
+
+.search-input {
+    padding-left: 20px;
+}
+
+.search-button {
+    border: 0 0 20px 0;
+}

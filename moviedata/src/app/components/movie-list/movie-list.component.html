@@ -1,0 +1,108 @@
+<div class="container">
+    <!--Header Portion-->
+    <app-search (onSearch)="handleSearchEvent($event)"></app-search>
+    <!--Shadow Paginator-->
+    <mat-paginator #paginator class="mat-paginator" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        showFirstLastButtons color="primary">
+    </mat-paginator>
+    <!--Custom Paginator-->
+    <app-paginator [pageSizeOptions]="pageSizeOptions" [totals]="dataSource.data.length" [numPages]="numPages"
+        [currPage]="currPage" (pageNumberClicked)="handlePageNumberClicked($event)"
+        (pageSizeChanged)="handlePageSizeChanged($event)">
+    </app-paginator>
+
+    <!--Movie Data Grid-->
+    <mat-table class="movie-table" #table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+        <!-- Star Column -->
+        <ng-container matColumnDef="star" sticky>
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <mat-icon>more_vert</mat-icon>
+            </mat-cell>
+        </ng-container>
+        <!-- Rank Column -->
+        <ng-container matColumnDef="rank" sticky>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Rank </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.rank}} </mat-cell>
+        </ng-container>
+
+        <!-- Title Column -->
+        <ng-container matColumnDef="title" sticky>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+        </ng-container>
+
+        <!-- Genre Column -->
+        <ng-container matColumnDef="genre" sticky>
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Genre </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.genre}} </mat-cell>
+        </ng-container>
+
+        <!-- Description Column -->
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef mat-sort-header width="40%"> Description </mat-header-cell>
+            <mat-cell *matCellDef=" let element"> {{element.description}} </mat-cell>
+        </ng-container>
+
+        <!-- Director Column -->
+        <ng-container matColumnDef="director">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Director </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.director}} </mat-cell>
+        </ng-container>
+
+        <!-- Actors Column -->
+        <ng-container matColumnDef="actors">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Actors </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.actors}} </mat-cell>
+        </ng-container>
+
+        <!-- Year Column -->
+        <ng-container matColumnDef="year">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Year </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.year}} </mat-cell>
+        </ng-container>
+
+        <!-- Runtime (Minutes) -->
+        <ng-container matColumnDef="runtimeMinutes">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Runtime (Minutes) </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.runtimeMinutes}} </mat-cell>
+        </ng-container>
+
+        <!-- Rating Column -->
+        <ng-container matColumnDef="rating">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Rating </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.rating}} </mat-cell>
+        </ng-container>
+
+        <!-- Votes Column -->
+        <ng-container matColumnDef="votes">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Votes </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.votes}} </mat-cell>
+        </ng-container>
+
+        <!-- Revenue (Millions) Column -->
+        <ng-container matColumnDef="revenueMillions">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Revenue (Millions) </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.revenueMillions}} </mat-cell>
+        </ng-container>
+
+        <!-- Metascore Column -->
+        <ng-container matColumnDef="metascore" color="primary">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> MetaScore </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.metascore}} </mat-cell>
+        </ng-container>
+
+        <!-- Custom Column -->
+        <ng-container matColumnDef="custom" stickyEnd>
+            <mat-header-cell *matHeaderCellDef (click)="expand()">
+                <mat-icon fontSet="material-icons-outlined">keyboard_tab</mat-icon>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let element" (click)="expand()">
+                <mat-icon fontSet="material-icons-outlined">keyboard_tab</mat-icon>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

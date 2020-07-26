@@ -1,0 +1,55 @@
+<div class="pagination-container">
+    <!--Multi Sort-->
+    <mat-slide-toggle class="multi-sort-toggle" checked=true color="primary" disableRipple=true>Multi Sort
+    </mat-slide-toggle>
+
+    <!--Clear Filters-->
+    <button class="clear-filters" mat-raised-button>
+        <mat-icon fontSet="material-icons-outlined">cancel</mat-icon>
+        <mat-label>Clear All Filters</mat-label>
+    </button>
+
+    <!--Results-->
+    <div class="page-results">Results: {{pageStart}} to {{pageEnd}} of {{totals}}</div>
+
+    <!--Items per page-->
+    <div class='page-size-selector'>
+        <mat-label class="page-size-selector-label">Items per page </mat-label>
+        <mat-form-field class="page-size-selector-field" appearance="outline">
+            <mat-select [(ngModel)]="selectedPageSize" (selectionChange)="firePageSizeChangedEvent($event)">
+                <mat-option *ngFor="let option of pageSizeOptions" [value]="option">{{option}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <!-- Pagination Buttons -->
+    <div class='page-buttons'>
+        <button mat-raised-button color="primary" (click)="fireGoToFirstPageEvent()">
+            <mat-icon style="width: 12px"> first_page</mat-icon>
+        </button>
+        <button mat-raised-button (click)="fireGoToPreviousPageEvent()">
+            <mat-icon style="width: 12px">chevron_left</mat-icon>
+        </button>
+        <button *ngFor="let i of pageList" mat-raised-button [color]="currPage==i?'primary':'none'"
+            (click)="firePageNumberClickedEvent(i)">{{i}}</button>
+        <button mat-raised-button (click)="fireGoToNextPageEvent()">
+            <mat-icon style="width: 12px">chevron_right</mat-icon>
+        </button>
+        <button mat-raised-button color="primary" (click)="fireGoToLastPageEvent()">
+            <mat-icon style="width: 12px">last_page</mat-icon>
+        </button>
+    </div>
+
+    <!-- Go to Page -->
+    <div class='page-selector'>
+        <mat-label class="page-selector-label">Go to page</mat-label>
+        <mat-form-field class="page-selector-field" appearance="outline">
+            <input matInput [(ngModel)]="gotoPage">
+        </mat-form-field>
+        <mat-label class="page-selector-label">of {{numPages}}</mat-label>
+        <div class="goto-buttongroup" (click)="fireGoToPageClickedEvent()">
+            <a>Go</a>
+            <mat-icon>chevron_right</mat-icon>
+        </div>
+    </div>
+</div>

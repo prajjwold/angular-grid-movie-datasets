@@ -1,0 +1,85 @@
+.pagination-container {
+    background-color: #eff6fa;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    height: 60px;
+    font-size: 13px;
+}
+
+.multi-sort-toggle {
+    padding: 0 15px;
+    display: block;
+}
+
+.clear-filters {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    border-radius: 30px;
+    padding: 0 15px;
+    width: 150px;
+    font-size: 13px;
+}
+
+.page-results {
+    padding: 0 15px;
+    min-width: px;
+}
+
+.page-size-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.page-size-selector-label {
+    width: 120px;
+    text-align: center;
+}
+
+.page-size-selector-field {
+    width: 70px;
+    margin-top: 20px;
+    padding: 0 5px;
+}
+
+.page-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-buttons .mat-raised-button {
+    min-width: 0;
+}
+
+.page-selector {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.page-selector-label {
+    text-align: center;
+    padding: 0 5px;
+}
+
+.page-selector-field {
+    width: 50px;
+    margin-top: 20px;
+    padding: 0 5px;
+}
+
+.goto-buttongroup {
+    display: flex;
+    color: #1f54b5;
+    justify-content: flex-start;
+    align-items: center;
+}

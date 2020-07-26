@@ -1,0 +1,115 @@
+.container {
+    padding: 0 10px;
+}
+
+mat-table {
+    width: 100%;
+    max-height: 700px;
+    overflow: scroll;
+}
+
+.movie-table {
+    width: 100%;
+    overflow: scroll;
+}
+
+mat-row, mat-header-row {
+    width: 100%;
+    max-width: inherit;
+}
+
+mat-sort-header-sorted {
+    color: white;
+}
+
+mat-header-cell {
+    background-color: #1f54b5;
+    color: white;
+    border-left: 0.5px solid rgb(201, 198, 198);
+    padding-left: 5px;
+}
+
+mat-cell {
+    padding-left: 5px;
+}
+
+.mat-row:nth-child(even) {
+    background-color: white;
+}
+
+.mat-row:nth-child(odd) {
+    background-color: #eff6fa;
+}
+
+.mat-table-sticky:first-child {
+    border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:last-child {
+    border-left: 1px solid #e0e0e0;
+}
+
+.mat-column-star {
+    flex: 0 0 30px;
+    align-self: center;
+    min-width: 30px;
+}
+
+.mat-column-rank {
+    flex: 0 0 50px;
+    min-width: 50px;
+}
+
+.mat-column-title {
+    flex: 0 0 180px;
+    min-width: 180px;
+}
+
+.mat-column-genre {
+    min-width: 180px;
+}
+
+.mat-column-description {
+    min-width: 500px;
+}
+
+.mat-column-director {
+    min-width: 100px;
+}
+
+.mat-column-actors {
+    flex: 0 0 250px;
+}
+
+.mat-column-year {
+    flex: 0 0 50px;
+}
+
+.mat-column-runtimeMinutes {
+    flex: 0 0 70px;
+}
+
+.mat-column-rating {
+    flex: 0 0 50px;
+}
+
+.mat-column-votes {
+    flex: 0 0 60px;
+}
+
+.mat-column-revenueMillions {
+    flex: 0 0 80px;
+}
+
+.mat-column-metascore {
+    flex: 0 0 50px;
+}
+
+.mat-column-custom {
+    flex: 0 0 20px;
+    color: #858484;
+}
+
+.mat-paginator {
+    display: none;
+}
