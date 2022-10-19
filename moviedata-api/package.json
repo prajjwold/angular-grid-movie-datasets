@@ -12,6 +12,6 @@
     "license": "ISC",
     "dependencies": {
         "express": "^4.17.1",
-        "papaparse": "^5.2.0"
+        "papaparse": "^5.3.2"
     }
 }
